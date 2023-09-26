@@ -1,23 +1,37 @@
-﻿
-
+﻿using System.Net;
 using System.Net.Sockets;
 
-const string? localHost = "127.0.0.1"; 
+const string serverIp = "127.0.0.1";   
+const int port = 8080;
 
-using Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+TcpListener? listener = null;
 
 try
 {
+    listener = new TcpListener(IPAddress.Parse(serverIp), port);
+    listener.Start();
 
+    Console.WriteLine($"Server started at {serverIp}:{port}");
 
+    TcpClient tcpClient = listener.AcceptTcpClient();           
+    Console.WriteLine("Connection established!");
 
+    using NetworkStream ns = tcpClient.GetStream();
+    using StreamReader reader = new StreamReader(ns);
+    using StreamWriter writer = new StreamWriter(ns);
+
+    string? message = reader.ReadLine();
+    Console.WriteLine($">>> {message}");
+
+    string response = "Hello from server!";
+    writer.WriteLine(response);
+    writer.Flush();
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Error: {ex.Message}");
+    Console.WriteLine($"ERROR: {ex.Message}");
 }
-finally 
+finally
 {
-    socket.Shutdown(SocketShutdown.Both);
-    socket.Close();
+    listener?.Stop();
 }

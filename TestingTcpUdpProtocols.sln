@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Tcp", "TestingTcpUdpProtocols\01_Tcp.csproj", "{CAA279B5-259F-4F71-810A-C27940EFC906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_tcp_server", "TestingTcpUdpProtocols\01_tcp_server.csproj", "{CAA279B5-259F-4F71-810A-C27940EFC906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_udp", "02_udp\02_udp.csproj", "{6B51ABE6-CECD-40CD-A052-B581C9C279FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_udp", "02_udp\03_udp.csproj", "{6B51ABE6-CECD-40CD-A052-B581C9C279FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_tcp_client", "02_tcp_client\02_tcp_client.csproj", "{F3D44C09-CE5D-4896-AEB9-F5C061DE7F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6B51ABE6-CECD-40CD-A052-B581C9C279FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B51ABE6-CECD-40CD-A052-B581C9C279FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B51ABE6-CECD-40CD-A052-B581C9C279FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D44C09-CE5D-4896-AEB9-F5C061DE7F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D44C09-CE5D-4896-AEB9-F5C061DE7F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D44C09-CE5D-4896-AEB9-F5C061DE7F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D44C09-CE5D-4896-AEB9-F5C061DE7F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
